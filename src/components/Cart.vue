@@ -64,6 +64,7 @@ const submitOrder = () => {
         remark: remark.value,
         sum: sum.value
     });
+    remark.value = "";
 }
 
 const removeFromCart = (drink) => {

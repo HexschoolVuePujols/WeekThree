@@ -55,7 +55,6 @@ const drinks = ref([
   },
 ]);
 const cart = ref([]);
-const remark = ref("");
 
 const sum = computed(() => {
   // let total = 0;
@@ -96,13 +95,13 @@ const order = ref({
   remark: "",
   sum: 0
 });
-const submitOrder = () => {
+const submitOrder = (fromInnerCart) => {
   order.value.drinks = [];
 
   cart.value.forEach(item => {
     order.value.drinks.push({ ...item });
   });
-  order.value.remark = remark.value;
+  order.value.remark = fromInnerCart.remark;
   order.value.sum = sum.value;
 
   cart.value = [];
